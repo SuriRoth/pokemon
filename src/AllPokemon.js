@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 function AllPokemon() {
     const [pokemon, setPokemon] = useState([]);
@@ -39,12 +40,13 @@ let loadMorePokemon = async () => {
                         const pokemonId = poke.url.split('/')[6];
                         const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
                         return (
-                            <div key={poke.name}
-                            className="card col-md-2 mb-4 mx-3">
+                            <div key={poke.name} className="card col-md-2 mb-4 mx-3">
+                                <Link to={`/pokemon/${pokemonId}`}>
                                 <div className="card-body">
                                     <img src={imageUrl} alt={poke.name} className="card-img-top"/>
                                     <h3 className="card-title text-center">{poke.name}</h3>
                                 </div>
+                                </Link>
                             </div>
                         )
                     })}
