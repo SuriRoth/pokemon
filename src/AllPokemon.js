@@ -52,7 +52,9 @@ let loadMorePokemon = async () => {
                     })}
                 </div>
             </div>
-            <button onClick={() => loadMorePokemon()}>Load More Pokemon</button>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary" onClick={() => loadMorePokemon()}>Load More Pokemon</button><br/>
+                </div>
         </>
     )
 };
