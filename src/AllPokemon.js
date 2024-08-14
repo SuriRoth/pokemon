@@ -33,8 +33,7 @@ let loadMorePokemon = async () => {
 
     return (
         <>
-            <h1>Pokemon!</h1>
-            <div className="container">
+        <div className="container">
                 <div className="row">
                     {pokemon.map((poke) => {
                         const pokemonId = poke.url.split('/')[6];
@@ -52,8 +51,8 @@ let loadMorePokemon = async () => {
                     })}
                 </div>
             </div>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary" onClick={() => loadMorePokemon()}>Load More Pokemon</button><br/>
+                <div className="d-grid gap-2 col-6 mx-auto">
+                    <button className="btn btn-primary" onClick={() => loadMorePokemon()}>Load More Pokemon</button><br/>
                 </div>
         </>
     )
